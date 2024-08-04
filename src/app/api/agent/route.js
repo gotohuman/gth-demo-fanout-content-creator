@@ -9,7 +9,7 @@ export async function POST(request) {
   const req = await request.json()
   const model = new ChatOpenAI({ temperature: 0.75, model: "gpt-4o" });
   const aiFlow = new AiFlow({
-    agentId: "content-researcher", fetch: fetch.bind(globalThis)
+    agentId: "content-writer", fetch: fetch.bind(globalThis)
   })
   aiFlow.step({id: "findNews", fn: async({config}) => {
     return findNews(config.topic)
