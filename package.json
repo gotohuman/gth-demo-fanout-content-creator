@@ -1,0 +1,19 @@
+{
+  "name": "gth-demo-fanout-content-creator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@langchain/openai": "^0.2.5",
+    "gotohuman": "^0.1.6",
+    "langchain": "^0.2.12",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}
