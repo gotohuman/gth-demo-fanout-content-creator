@@ -1,7 +1,7 @@
 export const maxDuration = 60;
 export const dynamic = 'force-dynamic';
 
-import AiFlow from "gotohuman";
+import { AiFlow } from "gotohuman";
 import { ChatOpenAI } from "@langchain/openai";
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
 
@@ -12,7 +12,7 @@ export async function POST(request) {
     agentId: "content-writer", fetch: fetch.bind(globalThis)
   })
   aiFlow.step({id: "findNews", fn: async({config}) => {
-    return findNews(config.topic)
+    return await findNews(config.topic)
   }})
   aiFlow.gotoHuman({id: "selectNews", options: { multiSelectFanOut: true }})
   aiFlow.step({id: "researchNews", fn: async({input}) => {
